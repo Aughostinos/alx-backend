@@ -35,7 +35,8 @@ class Server:
 
         return self.__dataset
 
-    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+    def get_page(self, page: int = 1,
+                 page_size: int = 10) -> List[List]:
         """should return a list of rows"""
         assert isinstance(
             page, int) and page > 0, "page must be positive int"
