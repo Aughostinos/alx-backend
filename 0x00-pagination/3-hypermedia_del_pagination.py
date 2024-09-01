@@ -41,16 +41,19 @@ class Server:
     def get_hyper_index(self, index: int = None, 
                         page_size: int = 10) -> Dict[str, Any]:
         """
-        Return a dictionary with pagination information that is resilient to deletion.
+        Return a dictionary with pagination information
+        that is resilient to deletion.
         """
         # validate index
-        assert isinstance(index, int) and 0 <= index < len(self.indexed_dataset())
+        assert isinstance(index, int) and 0 <= index < len(
+            self.indexed_dataset())
 
         data = []
         current_index = index
         next_index = index
 
-        while len(data) < page_size and next_index < len(self.indexed_dataset()):
+        while len(data) < page_size and next_index < len(
+            self.indexed_dataset()):
             item = self.indexed_dataset().get(next_index)
             if item:
                 data.append(item)
