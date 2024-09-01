@@ -38,7 +38,7 @@ class Server:
             }
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = None, 
+    def get_hyper_index(self, index: int = None,
                         page_size: int = 10) -> Dict[str, Any]:
         """
         Return a dictionary with pagination information
@@ -53,7 +53,7 @@ class Server:
         next_index = index
 
         while len(data) < page_size and next_index < len(
-            self.indexed_dataset()):
+                                                self.indexed_dataset()):
             item = self.indexed_dataset().get(next_index)
             if item:
                 data.append(item)
