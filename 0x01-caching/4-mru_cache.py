@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-""" MRUCache module
+""" MRU Cache module
 """
 
 from base_caching import BaseCaching
 
 
 class MRUCache(BaseCaching):
-    """ MRUCache is a caching system that follows MRU.
+    """caching system that follows MRU.
     """
 
     def __init__(self):

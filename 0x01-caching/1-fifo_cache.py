@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-""" FIFOCache module
+""" FIFO Cache module
 """
 from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
-    """ FIFOCache is a caching system that follows the FIFO.
+    """system that follows the FIFO.
     """
 
     def __init__(self):

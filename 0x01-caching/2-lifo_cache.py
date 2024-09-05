@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-""" LIFOCache module
+""" LIFO Cache module
 """
 
 from base_caching import BaseCaching
 
 
 class LIFOCache(BaseCaching):
-    """ LIFOCache is a caching system that follows LIFO.
+    """caching system that follows LIFO.
     """
 
     def __init__(self):

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-""" LRUCache module
+""" LRU Cache module
 """
 
 from base_caching import BaseCaching
 
 
 class LRUCache(BaseCaching):
-    """ LRUCache is a caching system that follows LRU.
+    """caching system that follows LRU.
     """
 
     def __init__(self):
