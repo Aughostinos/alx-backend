@@ -15,8 +15,8 @@ class FIFOCache(BaseCaching):
         self.order = []
 
     def put(self, key, item):
-       """a method that adds Item to the cache"""
-       if key is not None and item is not None:
+        """a method that adds Item to the cache"""
+        if key is not None and item is not None:
             if key not in self.cache_data:
                 if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                     # remove the first item inserted
@@ -33,4 +33,3 @@ class FIFOCache(BaseCaching):
     def get(self, key):
         """a method that gets an item by key"""
         return self.cache_data.get(key, None)
-
