@@ -1,34 +1,31 @@
 #!/usr/bin/env python3
-""" FIFOCache module
+""" LIFO Cache module
 """
 
 from base_caching import BaseCaching
 
 
-class FIFOCache(BaseCaching):
-    """ FIFOCache is a caching system that follows the FIFO.
+class LIFOCache(BaseCaching):
+    """caching system that follows LIFO.
     """
 
     def __init__(self):
         """ Initialize the class with additional attributes """
         super().__init__()
-        self.order = []
+        self.last_key = None
 
     def put(self, key, item):
         """a method that adds Item to the cache"""
         if key is not None and item is not None:
-            if key not in self.cache_data:
-                if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-                    # remove the first item inserted
-                    first_key = self.order.pop(0)
-                    del self.cache_data[first_key]
-                    print(f"DISCARD: {first_key}")
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+                if self.last_key:
+                    # remove the last item inserted
+                    del self.cache_data[self.last_key]
+                    print(f"DISCARD: {self.last_key}")
 
-                # Add the new key to the order list
-                self.order.append(key)
-
-            # Store the item in cache_data
+            # Store the new item
             self.cache_data[key] = item
+            self.last_key = key
 
     def get(self, key):
         """a method that gets an item by key"""
