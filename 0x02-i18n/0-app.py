@@ -3,7 +3,7 @@
 0x02. i18n
 Task 0. Basic Flask app
 """
-from flask import request
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
