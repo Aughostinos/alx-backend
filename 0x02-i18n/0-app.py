@@ -8,11 +8,11 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
     """home route"""
     return render_template('0-index.html', language='en')
-
 
 
 if __name__ == '__main__':
