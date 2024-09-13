@@ -7,6 +7,7 @@ Task 2. Get locale from request
 from flask import Flask, render_template, request
 from flask_babel import Babel
 
+
 class Config:
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
@@ -26,4 +27,8 @@ def get_locale():
 
 @app.route('/')
 def index():
-    return render_te
+    return render_template('2-index.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
