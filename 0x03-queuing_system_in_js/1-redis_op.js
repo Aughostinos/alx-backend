@@ -1,8 +1,7 @@
-import redis from 'redis'
+import { createClient, print } from 'redis';
 
 //create client
-const redis = require('redis');
-const client = redis.createClient();
+const client = createClient();
 
 //handle connection
 client.on('connect', () => {
