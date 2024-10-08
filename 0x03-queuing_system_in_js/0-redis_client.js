@@ -1,7 +1,7 @@
-import radis from 'redis'
+import { createClient } from 'redis'
 
 //create client
-const client = redis.createClient();
+const client = createClient();
 
 //handle connection
 client.on('connect', () => {
